@@ -157,7 +157,7 @@ class Primeiro extends Component {
                 <div id="planetas">
                     <table className="table table-striped table-dark table-hover">
                     <thead className="thead-dark">
-                        <tr><th colSpan={5}>Lista de planetas</th></tr>
+                        <tr><th colSpan={5}>Lista de Planetas</th></tr>
                         <tr> 
                             <th colSpan={5}>
                                 <input className="form-control" onChange={this.onChange} onBlur={this.onChange} type="text" placeholder="Pesquisar" />
