@@ -131,10 +131,10 @@ class Primeiro extends Component {
             display: 'none'
         };
         const listPlanetas = this.planetas.map((data, idx) => {
-            return <tr key={idx}><td>{data.name}</td><td>{data.population}</td><td>{data.climate}</td></tr>
+            return <tr key={idx}><td>{data.name}</td><td>{data.population}</td><td>{data.climate}</td><td><button onClick={this.abaFilmes} className="btn btn-primary">Filmes</button></td><td><button onClick={this.abaPersonagens} className="btn btn-primary">Personagens</button></td></tr>
         })
         const listPersonagens = this.personagens.map((data, idx) => {
-            return <tr key={idx}><td>{data.name}</td><td>{data.gender}</td></tr>
+            return <tr key={idx}><td>{data.name}</td><td>{data.gender}</td><td><button onClick={this.abaFilmes} className="btn btn-primary">Filmes</button></td></tr>
         })
         const listFilmes = this.filmes.map((data, idx) => {
             return <tr key={idx}><td>{data.title}</td><td>{data.episode_id}</td><td>{data.opening_crawl}</td><td>{data.release_date}</td><td><button onClick={this.abaPersonagens} className="btn btn-primary">Personagens</button></td><td><button onClick={this.abaPlanetas} className="btn btn-primary">Planetas</button></td></tr>
@@ -157,9 +157,9 @@ class Primeiro extends Component {
                 <div id="planetas">
                     <table className="table table-striped table-dark table-hover">
                     <thead className="thead-dark">
-                        <tr><th colSpan={3}>Lista de planetas</th></tr>
+                        <tr><th colSpan={5}>Lista de planetas</th></tr>
                         <tr> 
-                            <th colSpan={3}>
+                            <th colSpan={5}>
                                 <input className="form-control" onChange={this.onChange} onBlur={this.onChange} type="text" placeholder="Pesquisar" />
                                 <div className="form-check form-check-inline">
                                     <input className="form-check-input" onChange={this.onChangeTipo} type="radio" name="opcaoPlaneta" id="planetaNome" value="name" checked={this.state.tipo == 'name'} />
@@ -181,7 +181,7 @@ class Primeiro extends Component {
                                 </div>
                             </th>
                         </tr>
-                        <tr id="responsive"><th>Planeta</th><th>População</th><th>Clima</th></tr>
+                        <tr id="responsive"><th>Planeta</th><th>População</th><th>Clima</th><th colSpan={2}></th></tr>
                     </thead>
                     <tbody>
                         {listPlanetas}
@@ -191,7 +191,7 @@ class Primeiro extends Component {
                 <div id="personagens" style={hide}>
                     <table className="table table-striped table-dark table-hover">
                     <thead className="thead-dark">
-                        <tr><th colSpan={2}>Lista de Personagens</th></tr>
+                        <tr><th colSpan={3}>Lista de Personagens</th></tr>
                         <tr> 
                             <th colSpan={3}>
                                 <input className="form-control" onChange={this.onChange} onBlur={this.onChange} type="text" placeholder="Pesquisar" />
@@ -211,7 +211,7 @@ class Primeiro extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr id="responsive"><th>Nome</th><th>Gênero</th></tr>
+                        <tr id="responsive"><th>Nome</th><th>Gênero</th><th></th></tr>
                         {listPersonagens}
                     </tbody>
                     </table>
