@@ -6,8 +6,26 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+ul *, li * {
+  list-style: none;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+@media only screen and (max-width: 600px) {
+  tbody tr {
+    display: grid !important;
+  }
+  tbody tr > td:nth-child(1) {
+    font-weight: bold;
+    background: gray;
+    color: white;
+  }
+  #responsive {
+    display: none !important;
+  }
+  tbody th {
+    display: none !important;
+  }
 }
